@@ -2,37 +2,39 @@ import chef from './assets/ChefPhoto.jpg';
 
 export default function home() {
     const body = document.querySelector('body');
-    body.style.minHeight = '100vh';
+    body.style.minHeight = 'calc(100vh + 50px)';
     body.style.marginBottom = '0px';
 
     const main = document.getElementById('content');
 
 
+    const homePage = document.querySelector('#main-page');
+    homePage.classList.forEach(className => {
+        homePage.classList.remove(className);
+    });
+    homePage.classList.add('home');
 
-    const div = document.createElement('div');
-    div.className = 'home';
-
-    const hello = document.createElement('h3');
-    hello.textContent = 'Welcome to Sushi City';
-    div.appendChild(hello);
+    const welcome = document.createElement('h3');
+    welcome.textContent = 'Welcome to Sushi City';
+    homePage.appendChild(welcome);
 
     const h2 = document.createElement('h2');
     h2.textContent = 'Meet our Chef';
-    div.appendChild(h2);
+    homePage.appendChild(h2);
 
     const h4 = document.createElement('h4');
     h4.textContent = 'Akiko Saito';
-    div.appendChild(h4);
+    homePage.appendChild(h4);
 
     const img = document.createElement('img');
     img.id = 'chef-photo';
     img.src = chef;
     img.alt = 'Chef Photo';
-    div.appendChild(img);
+    homePage.appendChild(img);
 
     const h5 = document.createElement('h5');
     h5.textContent = 'Orders in the link below';
-    div.appendChild(h5);
+    homePage.appendChild(h5);
 
-    main.appendChild(div);
+    main.appendChild(homePage);
 }

@@ -2,6 +2,7 @@ import './styles.css';
 import home from './home.js';
 import menu from './menu.js';
 import about from './about.js';
+import footer from './footer.js';
 
 const homePage = document.querySelector('a');
 
@@ -10,9 +11,10 @@ const loadHome = document.querySelector('#home');
 const loadMenu = document.querySelector('#menu');
 const loadAbout = document.querySelector('#about');
 const main = document.querySelector('#content');
+const maindiv = document.querySelector('#main-page');
 
 homePage.addEventListener('click', () => {
-    main.innerHTML = '';
+    maindiv.innerHTML = '';
     loadHome.classList.add('active');
     loadMenu.classList.remove('active');
     loadAbout.classList.remove('active');
@@ -20,7 +22,7 @@ homePage.addEventListener('click', () => {
 });
 
 loadHome.addEventListener('click', () => {
-    main.innerHTML = '';
+    maindiv.innerHTML = '';
     loadHome.classList.add('active');
     loadMenu.classList.remove('active');
     loadAbout.classList.remove('active');
@@ -28,7 +30,7 @@ loadHome.addEventListener('click', () => {
 });
 
 loadMenu.addEventListener('click', () => {
-    main.innerHTML = '';
+    maindiv.innerHTML = '';
     loadMenu.classList.add('active');
     loadAbout.classList.remove('active');
     loadHome.classList.remove('active');
@@ -36,7 +38,7 @@ loadMenu.addEventListener('click', () => {
 });
 
 loadAbout.addEventListener('click', () => {
-    main.innerHTML = '';
+    maindiv.innerHTML = '';
     loadAbout.classList.add('active');
     loadMenu.classList.remove('active');
     loadHome.classList.remove('active');
@@ -49,3 +51,5 @@ loadHome.classList.add('active');
 loadMenu.classList.remove('active');
 loadAbout.classList.remove('active');
 home();
+
+footer();

@@ -8,11 +8,10 @@ import chirashiImg from './assets/Chirashi.jpg';
 
 export default function menu() {
     const body = document.querySelector('body');
-    body.style.maxHeight = 'fitContent';
+    body.style.maxHeight = 'fit-content';
     const main = document.getElementById('content');
 
 
-    // Menu items array with imported images
     const menuItems = [
         {
             name: "Sashimi",
@@ -46,7 +45,10 @@ export default function menu() {
         }
     ];
 
-    const menuContainer = document.createElement('div');
+    const menuContainer = document.querySelector('#main-page');
+    menuContainer.classList.forEach(className => {
+        menuContainer.classList.remove(className);
+    });
     menuContainer.classList.add('menu');
 
     const options = document.createElement('div');

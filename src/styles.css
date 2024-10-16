@@ -106,14 +106,13 @@ nav button:hover {
 
 nav button:active {
     transform: translateY(-4px);
-    border-color: rgb(167, 167, 167);
+    animation: 1s ease 0s 1 reverse none running none;
 }
 
 .active {
     border-bottom: 4px solid #fff;
     border-top: 4px solid #fff;
 }
-
 
 #chef-photo {
     width: clamp(250px, 80%, 300px);
@@ -131,14 +130,19 @@ nav button:active {
     height: 100%;
 }
 
-.home, .menu, .about{
+#main-page {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 2rem;
-    width: clamp(250px, 35%, 1000px);
+    width: clamp(300px, 35%, 1000px);
     background-color: #000000b9;
+}
+
+.home, .menu, .about{
+    animation: fadeIn 1s;
+    margin-bottom: 100px;
 }
 
 .home h4 {
@@ -161,7 +165,6 @@ nav button:active {
     margin-top: 2rem;
     gap: 20px;
 }
-
 
 .food-card {
     background-color: #000000bd;
@@ -216,7 +219,6 @@ nav button:active {
 
 .about {
     gap: 40px;
-    width: clamp(350px, 35%, 1000px);
 }
 
 .about div {
@@ -227,14 +229,13 @@ nav button:active {
     justify-content: center;
 }
 
-
-@media screen and (max-height: 850px) {
-    .restaurant-head p, .restaurant-head h3 {
-        display: none;
+@keyframes fadeIn {
+    0% {
+      opacity: 0;
     }
-
-    .restaurant-head {
-        margin-bottom: 0px;
+  
+    100% {
+      opacity: 1;
     }
 }
 
@@ -253,7 +254,5 @@ nav button:active {
 
     .options {
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr 1fr; 
     }
-    
 }
